@@ -41,9 +41,15 @@ nc: 3  # number of classes
 names: [ 'hand','smoke','vape' ]  # names of classes you are using` 
 3. **cfg/training/yolov7_custom.yaml**: Download the model weights given in the  repo to your local system
 
-Next, training is done using the following command (run this on the terminal of your choice):
+### Commands
 
-`!python train_.py --device 0 --batch-size 16 --data data/custom_data.yaml --img 640 640 --cfg cfg/training/yolov7_custom.yaml --weights yolov7_training.pt --name model_1 --hyp data/custom_hyperparameters.yaml --epochs 700`
+We used the following commands to train the model (steps f,g,h,i):
+`!python detect.py --weights runs/train/yoloV7_3_2/weights/best.pt --conf 0.6 --img-size 640 --source ./data/val/images --name Run_inference`
+
+### Inference
+
+Next, inference is done using the following command (run this on the terminal of your choice):
+`!python train_.py --device 0 --batch-size 16 -- data data/custom.yaml --img 640 640 --cfg cfg/training/yolov7_custom.yaml --weights yolov7_training.pt --name yoloV7_3_ --hyp data/yoloV7_pe2.yaml --epochs 300 --freeze 50`
 
 You will find the weights of the model on yolov7/runs/train/model_1 
 
@@ -51,6 +57,7 @@ You can now use these weights to run inference as follows (run this on the termi
 
 `!python detect.py --weights runs/train/yoloV7_3_2/weights/best.pt --conf 0.6 --img-size 640 --source ./data/val/images --name inference1`
 
+### Google Colab Implementation
 Alternatively, if you'd like to use python notebooks to make your life easier, you can find the training implemented in [notebooks/resource-allocator-1.ipynb](notebooks/resource-allocator-1.ipynb) and inference done from [notebooks/run-inference.ipynb](notebooks/run-inference.ipynb). 
 
 If you'd like to run inference or train on your own model and dataset, you can simply change the file paths in the commands. (step f,g,h,i)
