@@ -14,7 +14,7 @@ We collected data over several days using the [scraper here](https://github.com/
 
 ### Taking screenshots
 
-As shown in the paper and the figure above, we get 300 total videos from which we take screenshots. This is shown in step c of the above figure. I have another repository where I maintain some helper codes, you can find code to take screenshots [there](https://github.com/tanviaanand/TikTok-Helper-Codes).
+As illustrated in the figure above, we used 300 total videos (step a) from which we took 826 unique screenshots (step c). You can find code to take screenshots [there](https://github.com/tanviaanand/TikTok-Helper-Codes).
 
 ### Annotation
 We used labelIMG, an open source library, to create image annotations (step d), AKA draw bounding boxes around the objects of interest (in our case: vape, hand, smoke). Detailed download and usage instructions can be found [here](https://github.com/heartexlabs/labelImg). A human being will have to carry this step out!
@@ -61,5 +61,3 @@ You can now use these weights to run inference as follows (run this on the termi
 Alternatively, if you'd like to use python notebooks to make your life easier, you can find the training implemented in [notebooks/resource-allocator-1.ipynb](notebooks/resource-allocator-1.ipynb) and inference done from [notebooks/run-inference.ipynb](notebooks/run-inference.ipynb). 
 
 If you'd like to run inference or train on your own model and dataset, you can simply change the file paths in the commands. (step f,g,h,i)
-
-Thank you for referring to our project and feel free to open issues in case of any questions!
